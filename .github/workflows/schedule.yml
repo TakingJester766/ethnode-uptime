@@ -3,7 +3,7 @@ name: Fetch Data Every 5 Minutes
 on:
   schedule:
     # Runs every 5 minutes
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   fetch-data:
