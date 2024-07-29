@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-const validatorKey = process.env.VALIDATOR_KEY;
+const validatorKey = os.env.VALIDATOR_KEY;
 
 if (!validatorKey) {
     console.error('VALIDATOR_KEY is not set');
