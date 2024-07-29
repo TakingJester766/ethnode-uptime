@@ -2,11 +2,6 @@ import fetch from 'node-fetch';
 
 const validatorKey = process.env.VALIDATOR_KEY;
 
-if (!validatorKey) {
-    console.error('VALIDATOR_KEY is not set');
-    process.exit(1);
-}
-
 const url = `https://holesky.beaconcha.in/api/v1/validator/${validatorKey}`;
 
 const fetchWithTimeout = (url, options, timeout = 15000) => {
