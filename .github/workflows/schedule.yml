@@ -1,4 +1,4 @@
-name: Fetch Data Every 5 Minutes
+name: Test ethnode liveness
 
 on:
   push:
