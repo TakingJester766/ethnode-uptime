@@ -1,0 +1,27 @@
+name: Fetch Data Every 5 Minutes
+
+on:
+  schedule:
+    # Runs every 5 minutes
+    - cron: '*/15 * * * *'
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.17.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run fetch data script
+        env:
+          VALIDATOR_KEY: ${{ secrets.VALIDATOR_KEY }}
+        run: node index.js
