@@ -1,6 +1,10 @@
 name: Fetch Data Every 5 Minutes
 
 on:
+  push:
+    branches:
+      - main
+
   schedule:
     # Runs every 5 minutes
     - cron: '*/5 * * * *'
