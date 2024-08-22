@@ -26,7 +26,7 @@ const fetchData = async (url, retries = 3, timeout = 10000) => {
     for (let i = 0; i < retries; i++) {
         try {
             const response = await fetchWithTimeout(url, {}, timeout);
-            if (!response.ok || !response.status == "OK") {
+            if (!response.data.status === 'active_online') {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             const data = await response.json();
